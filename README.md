@@ -194,10 +194,6 @@ Tests cover feature processing, the API endpoints and the threshold logic. CI ru
 - Feature stores and real streaming (Kafka) instead of replay
 - Analyst feedback loop to improve the model
 
-## License
-
-MIT. See [LICENSE](LICENSE).
-
 ## Author
 
 **YOUR NAME** · [LinkedIn](YOUR_LINKEDIN) · [GitHub](YOUR_GITHUB)
