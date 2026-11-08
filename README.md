@@ -1,5 +1,4 @@
 # FraudLens
-Explainable real-time fraud detection: XGBoost + SHAP explanations, FastAPI scoring service, live Streamlit dashboard, and LLM-written alert summaries. Dockerized with CI.
 
 **Explainable real-time fraud detection: risk scoring, SHAP explanations, a live dashboard and plain-English alert summaries.**
 
@@ -7,7 +6,9 @@ Explainable real-time fraud detection: XGBoost + SHAP explanations, FastAPI scor
 
 ![Demo](docs/demo.gif)
 
------------
+> Replace the links above and add `docs/demo.gif` (a 20 to 30 second screen recording of alerts appearing and an explanation being shown).
+
+---
 
 ## Overview
 
@@ -32,6 +33,7 @@ Fraud is rare (under 1% of transactions in this dataset), costly, and has to be 
 
 ## Architecture
 
+```
 Simulated transaction stream
           |
           v
@@ -39,16 +41,18 @@ Simulated transaction stream
           |                      |
           v                      v
    Streamlit dashboard  <---  LLM explainer (with template fallback)
+```
 
 ## Tech stack
 
-Area	Tools
-Modeling	Python, pandas, scikit-learn, XGBoost, imbalanced-learn
-Explainability	SHAP
-Backend	FastAPI, Pydantic
-Frontend	Streamlit, Plotly
-LLM layer	[Gemini / Groq / Ollama: edit to match what you used]
-DevOps	Docker, pytest, GitHub Actions
+| Area | Tools |
+|---|---|
+| Modeling | Python, pandas, scikit-learn, XGBoost, imbalanced-learn |
+| Explainability | SHAP |
+| Backend | FastAPI, Pydantic |
+| Frontend | Streamlit, Plotly |
+| LLM layer | [Gemini / Groq / Ollama: edit to match what you used] |
+| DevOps | Docker, pytest, GitHub Actions |
 
 ## Dataset
 
@@ -59,6 +63,7 @@ DevOps	Docker, pytest, GitHub Actions
 > Fill this table with numbers you actually measured on a held-out test set. Do not leave placeholders in the published version.
 
 | Model | Precision | Recall | F1 | PR-AUC |
+|---|---|---|---|---|
 | Logistic Regression | [ ] | [ ] | [ ] | [ ] |
 | Random Forest | [ ] | [ ] | [ ] | [ ] |
 | XGBoost (tuned) | [ ] | [ ] | [ ] | [ ] |
@@ -83,6 +88,7 @@ DevOps	Docker, pytest, GitHub Actions
 
 ### Run locally
 
+```bash
 git clone https://github.com/YOUR_USERNAME/fraudlens.git
 cd fraudlens
 
@@ -98,16 +104,21 @@ uvicorn api.main:app --reload
 
 # In a second terminal, start the dashboard
 streamlit run app/dashboard.py
+```
 
 ### Run with Docker
 
+```bash
 docker compose up --build
+```
 
 ### Environment variables
 
 Create a `.env` file (never commit it):
 
+```
 LLM_API_KEY=your_key_here
+```
 
 Without a key, alert explanations fall back to a template-based summary.
 
@@ -190,3 +201,4 @@ MIT. See [LICENSE](LICENSE).
 ## Author
 
 **YOUR NAME** · [LinkedIn](YOUR_LINKEDIN) · [GitHub](YOUR_GITHUB)
+MIT. See [LICENSE](LICENSE).
