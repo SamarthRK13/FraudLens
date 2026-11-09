@@ -7,9 +7,11 @@ shap
 matplotlib
 seaborn
 jupyter
+ipykernel
 fastapi
 uvicorn
 pydantic
 streamlit
 plotly
 pytest
+python-dotenv

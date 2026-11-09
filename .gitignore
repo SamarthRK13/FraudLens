@@ -17,7 +17,9 @@ env/
 .ipynb_checkpoints/
 
 # Project data (download separately, see README)
-data/
+.venv/
+data/*
+!data/.gitkeep
 *.csv
 
 # OS and editor files
